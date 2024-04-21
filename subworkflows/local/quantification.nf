@@ -23,6 +23,7 @@ if (!skip_centroiding){
 
     OPENMS_PEAKPICKERHIRES(mzml_files)
     mzml_files=OPENMS_PEAKPICKERHIRES.out.mzml
+    mzml_file_centroiding=mzml_files
     ch_versions       = ch_versions.mix(OPENMS_PEAKPICKERHIRES.out.versions.first())
 }
 
@@ -88,6 +89,7 @@ if(ms2_collection_model=="paired" && !skip_alignment)
     quantified_features = quantified_features
     quantificaiton_data = quantificaiton_data
     mzml_files = mzml_files
+    mzml_file_centroiding = mzml_file_centroiding
     versions       = ch_versions
 
 }
