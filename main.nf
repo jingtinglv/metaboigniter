@@ -28,6 +28,15 @@ if (params.help) {
     System.exit(0)
 }
 
+//MS1 peak Functional enrichment analysis
+if (params.MS1peak_FA) {
+    MS1PEAK_CHANNEL = Channel.fromPath(params.MS1peak)
+    log.info "EXECUTE MS1 peak Functional enrichment analysis"
+    include { MS1peak_FA } from './subworkflows/MS1peak_FA'
+    MS1peak_FA ()
+    System.exit(0)
+}
+
 // Validate input parameters
 if (params.validate_params) {
     validateParameters()
