@@ -30,7 +30,7 @@ if (params.help) {
 
 //MS1 peak Functional enrichment analysis
 if (params.MS1peak_FA) {
-    MS1PEAK_CHANNEL = Channel.fromPath(params.MS1peak)
+    MS1PEAK_CHANNEL = Channel.fromPath(params.MS1peak_FA)
     log.info "EXECUTE MS1 peak Functional enrichment analysis"
     include { MS1peak_FA } from './subworkflows/MS1peak_FA.nf'
     MS1peak_FA ()
